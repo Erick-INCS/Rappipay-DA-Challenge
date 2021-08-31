@@ -1,0 +1,58 @@
+[2021-08-31 12:53:46,390] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: snowflake_test.snowfalke_create 2021-08-31T12:47:01.760509+00:00 [queued]>
+[2021-08-31 12:53:46,413] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: snowflake_test.snowfalke_create 2021-08-31T12:47:01.760509+00:00 [queued]>
+[2021-08-31 12:53:46,413] {taskinstance.py:1094} INFO - 
+--------------------------------------------------------------------------------
+[2021-08-31 12:53:46,413] {taskinstance.py:1095} INFO - Starting attempt 5 of 5
+[2021-08-31 12:53:46,414] {taskinstance.py:1096} INFO - 
+--------------------------------------------------------------------------------
+[2021-08-31 12:53:46,428] {taskinstance.py:1114} INFO - Executing <Task(SnowflakeOperator): snowfalke_create> on 2021-08-31T12:47:01.760509+00:00
+[2021-08-31 12:53:46,435] {standard_task_runner.py:52} INFO - Started process 3379 to run task
+[2021-08-31 12:53:46,441] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'snowflake_test', 'snowfalke_create', '2021-08-31T12:47:01.760509+00:00', '--job-id', '33', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/snowflake.py', '--cfg-path', '/tmp/tmpkwyovzfh', '--error-file', '/tmp/tmpml5rvqzf']
+[2021-08-31 12:53:46,442] {standard_task_runner.py:77} INFO - Job 33: Subtask snowfalke_create
+[2021-08-31 12:53:46,499] {logging_mixin.py:109} INFO - Running <TaskInstance: snowflake_test.snowfalke_create 2021-08-31T12:47:01.760509+00:00 [running]> on host f134af24bd93
+[2021-08-31 12:53:46,570] {taskinstance.py:1251} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Airflow
+AIRFLOW_CTX_DAG_ID=snowflake_test
+AIRFLOW_CTX_TASK_ID=snowfalke_create
+AIRFLOW_CTX_EXECUTION_DATE=2021-08-31T12:47:01.760509+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2021-08-31T12:47:01.760509+00:00
+[2021-08-31 12:53:46,571] {snowflake.py:121} INFO - Executing: ['create table public.test_employee (id number, name string);', "insert into public.test_employee values(1, 'Sam'),(2, 'Andy'),(3, 'Gill');"]
+[2021-08-31 12:53:46,587] {base.py:70} INFO - Using connection to: id: snowflake_default. Host: https://tm52136.west-us-2.azure.snowflakecomputing.com/, Port: None, Schema: RPY_SCH, Login: incspn, Password: ***, extra: {'extra__snowflake__account': 'tm52136', 'extra__snowflake__aws_access_key_id': '', 'extra__snowflake__aws_secret_access_key': '***', 'extra__snowflake__database': 'RPY_DB', 'extra__snowflake__region': 'west-us-2.azure', 'extra__snowflake__role': '', 'extra__snowflake__warehouse': ''}
+[2021-08-31 12:53:46,589] {connection.py:270} INFO - Snowflake Connector for Python Version: 2.6.0, Python Version: 3.8.11, Platform: Linux-5.4.0-81-generic-x86_64-with-glibc2.2.5
+[2021-08-31 12:53:46,590] {connection.py:890} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2021-08-31 12:53:46,590] {connection.py:908} INFO - Setting use_openssl_only mode to False
+[2021-08-31 12:53:47,756] {base.py:70} INFO - Using connection to: id: snowflake_default. Host: https://tm52136.west-us-2.azure.snowflakecomputing.com/, Port: None, Schema: RPY_SCH, Login: incspn, Password: ***, extra: {'extra__snowflake__account': 'tm52136', 'extra__snowflake__aws_access_key_id': '', 'extra__snowflake__aws_secret_access_key': '***', 'extra__snowflake__database': 'RPY_DB', 'extra__snowflake__region': 'west-us-2.azure', 'extra__snowflake__role': '', 'extra__snowflake__warehouse': ''}
+[2021-08-31 12:53:47,757] {connection.py:270} INFO - Snowflake Connector for Python Version: 2.6.0, Python Version: 3.8.11, Platform: Linux-5.4.0-81-generic-x86_64-with-glibc2.2.5
+[2021-08-31 12:53:47,758] {connection.py:890} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2021-08-31 12:53:48,143] {cursor.py:678} INFO - query: [ALTER SESSION SET autocommit=True]
+[2021-08-31 12:53:48,296] {cursor.py:702} INFO - query execution done
+[2021-08-31 12:53:48,297] {snowflake.py:284} INFO - Running statement: create table public.test_employee (id number, name string);, parameters: None
+[2021-08-31 12:53:48,297] {cursor.py:678} INFO - query: [create table public.test_employee (id number, name string);]
+[2021-08-31 12:53:48,417] {cursor.py:702} INFO - query execution done
+[2021-08-31 12:53:48,425] {connection.py:521} INFO - closed
+[2021-08-31 12:53:48,425] {connection.py:524} INFO - No async queries seem to be running, deleting session
+[2021-08-31 12:53:48,532] {taskinstance.py:1462} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1164, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1282, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1312, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/snowflake/operators/snowflake.py", line 123, in execute
+    execution_info = hook.run(self.sql, autocommit=self.autocommit, parameters=self.parameters)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/snowflake/hooks/snowflake.py", line 288, in run
+    cur.execute(sql_statement)
+  File "/home/airflow/.local/lib/python3.8/site-packages/snowflake/connector/cursor.py", line 768, in execute
+    Error.errorhandler_wrapper(
+  File "/home/airflow/.local/lib/python3.8/site-packages/snowflake/connector/errors.py", line 254, in errorhandler_wrapper
+    handed_over = Error.hand_to_other_handler(
+  File "/home/airflow/.local/lib/python3.8/site-packages/snowflake/connector/errors.py", line 309, in hand_to_other_handler
+    cursor.errorhandler(connection, cursor, error_class, error_value)
+  File "/home/airflow/.local/lib/python3.8/site-packages/snowflake/connector/errors.py", line 188, in default_errorhandler
+    raise error_class(
+snowflake.connector.errors.ProgrammingError: SQL compilation error:
+Object 'PUBLIC.TEST_EMPLOYEE' already exists.
+[2021-08-31 12:53:48,534] {taskinstance.py:1505} INFO - Marking task as FAILED. dag_id=snowflake_test, task_id=snowfalke_create, execution_date=20210831T124701, start_date=20210831T125346, end_date=20210831T125348
+[2021-08-31 12:53:48,576] {local_task_job.py:151} INFO - Task exited with return code 1
+[2021-08-31 12:53:48,628] {local_task_job.py:261} INFO - 0 downstream tasks scheduled from follow-on schedule check

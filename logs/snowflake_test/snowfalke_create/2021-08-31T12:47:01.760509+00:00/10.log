@@ -1,0 +1,39 @@
+[2021-08-31 13:30:17,399] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: snowflake_test.snowfalke_create 2021-08-31T12:47:01.760509+00:00 [queued]>
+[2021-08-31 13:30:17,445] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: snowflake_test.snowfalke_create 2021-08-31T12:47:01.760509+00:00 [queued]>
+[2021-08-31 13:30:17,459] {taskinstance.py:1094} INFO - 
+--------------------------------------------------------------------------------
+[2021-08-31 13:30:17,471] {taskinstance.py:1095} INFO - Starting attempt 10 of 10
+[2021-08-31 13:30:17,499] {taskinstance.py:1096} INFO - 
+--------------------------------------------------------------------------------
+[2021-08-31 13:30:17,530] {taskinstance.py:1114} INFO - Executing <Task(SnowflakeOperator): snowfalke_create> on 2021-08-31T12:47:01.760509+00:00
+[2021-08-31 13:30:17,553] {standard_task_runner.py:52} INFO - Started process 1111 to run task
+[2021-08-31 13:30:17,559] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'snowflake_test', 'snowfalke_create', '2021-08-31T12:47:01.760509+00:00', '--job-id', '48', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/snowflake.py', '--cfg-path', '/tmp/tmpz0cvb0hv', '--error-file', '/tmp/tmpbgxubzxb']
+[2021-08-31 13:30:17,566] {standard_task_runner.py:77} INFO - Job 48: Subtask snowfalke_create
+[2021-08-31 13:30:17,692] {logging_mixin.py:109} INFO - Running <TaskInstance: snowflake_test.snowfalke_create 2021-08-31T12:47:01.760509+00:00 [running]> on host f134af24bd93
+[2021-08-31 13:30:17,800] {taskinstance.py:1251} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Airflow
+AIRFLOW_CTX_DAG_ID=snowflake_test
+AIRFLOW_CTX_TASK_ID=snowfalke_create
+AIRFLOW_CTX_EXECUTION_DATE=2021-08-31T12:47:01.760509+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2021-08-31T12:47:01.760509+00:00
+[2021-08-31 13:30:17,811] {snowflake.py:121} INFO - Executing: insert into TEST_TABLE values('', '')
+[2021-08-31 13:30:17,825] {base.py:70} INFO - Using connection to: id: snowflake_default. Host: https://tm52136.west-us-2.azure.snowflakecomputing.com/, Port: None, Schema: RPY_SCH, Login: incspn, Password: ***, extra: {'extra__snowflake__account': 'tm52136', 'extra__snowflake__aws_access_key_id': '', 'extra__snowflake__aws_secret_access_key': '***', 'extra__snowflake__database': 'RPY_DB', 'extra__snowflake__region': 'west-us-2.azure', 'extra__snowflake__role': '', 'extra__snowflake__warehouse': ''}
+[2021-08-31 13:30:17,828] {connection.py:270} INFO - Snowflake Connector for Python Version: 2.6.0, Python Version: 3.8.11, Platform: Linux-5.4.0-81-generic-x86_64-with-glibc2.2.5
+[2021-08-31 13:30:17,855] {connection.py:890} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2021-08-31 13:30:17,880] {connection.py:908} INFO - Setting use_openssl_only mode to False
+[2021-08-31 13:30:19,065] {base.py:70} INFO - Using connection to: id: snowflake_default. Host: https://tm52136.west-us-2.azure.snowflakecomputing.com/, Port: None, Schema: RPY_SCH, Login: incspn, Password: ***, extra: {'extra__snowflake__account': 'tm52136', 'extra__snowflake__aws_access_key_id': '', 'extra__snowflake__aws_secret_access_key': '***', 'extra__snowflake__database': 'RPY_DB', 'extra__snowflake__region': 'west-us-2.azure', 'extra__snowflake__role': '', 'extra__snowflake__warehouse': ''}
+[2021-08-31 13:30:19,073] {connection.py:270} INFO - Snowflake Connector for Python Version: 2.6.0, Python Version: 3.8.11, Platform: Linux-5.4.0-81-generic-x86_64-with-glibc2.2.5
+[2021-08-31 13:30:19,091] {connection.py:890} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2021-08-31 13:30:19,728] {cursor.py:678} INFO - query: [ALTER SESSION SET autocommit=True]
+[2021-08-31 13:30:19,868] {cursor.py:702} INFO - query execution done
+[2021-08-31 13:30:19,882] {snowflake.py:284} INFO - Running statement: insert into TEST_TABLE values('', ''), parameters: None
+[2021-08-31 13:30:19,892] {cursor.py:678} INFO - query: [insert into TEST_TABLE values('', '')]
+[2021-08-31 13:30:20,531] {cursor.py:702} INFO - query execution done
+[2021-08-31 13:30:20,533] {snowflake.py:292} INFO - Statement execution info - {'number of rows inserted': 1}
+[2021-08-31 13:30:20,552] {snowflake.py:295} INFO - Rows affected: 1
+[2021-08-31 13:30:20,573] {snowflake.py:296} INFO - Snowflake query id: 019ea2ea-0000-6d3a-0000-00008bd121a1
+[2021-08-31 13:30:20,584] {connection.py:521} INFO - closed
+[2021-08-31 13:30:20,585] {connection.py:524} INFO - No async queries seem to be running, deleting session
+[2021-08-31 13:30:20,781] {taskinstance.py:1211} INFO - Marking task as SUCCESS. dag_id=snowflake_test, task_id=snowfalke_create, execution_date=20210831T124701, start_date=20210831T133017, end_date=20210831T133020
+[2021-08-31 13:30:20,830] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-08-31 13:30:20,879] {local_task_job.py:261} INFO - 1 downstream tasks scheduled from follow-on schedule check
